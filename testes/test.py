@@ -5,7 +5,7 @@ import sys
 # sys.path.append(os.path.abspath(scriptpath))
 # from operationsService import *
 sys.path.insert(0,"..")
-from services.operationsService import *
+from servicos.operationsService import *
 
 import unittest
 
