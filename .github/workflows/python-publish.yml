@@ -21,8 +21,8 @@ jobs:
           python-version: 3.6
       - name: Install dependencies
         run: |
-          python3 -m pip install --upgrade pip3
-          pip3 install -r requirements.txt
+          python3 -m pip install --upgrade pip
+          pip install -r requirements.txt
       - name: Test with pytest
         run: cd tests
             python -m unittest discover -s ./test  -p 'test*.py'
