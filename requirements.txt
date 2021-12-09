@@ -7,7 +7,7 @@ Flask-Session==0.4.0
 greenlet==1.1.2
 itsdangerous==2.0.1
 Jinja2==3.0.1
-mariadb==1.0.8
+mariadb
 MarkupSafe==2.0.1
 mysql==0.0.3
 mysqlclient==2.0.3
