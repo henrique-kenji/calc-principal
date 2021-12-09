@@ -10,6 +10,20 @@ name: Upload Python Package
 
 on: [push]
 
+env:
+  # replace "github_username" with your GitHub username
+  # replace "github.com/username/repo.git" with your GitHub repo path
+  # do NOT replace ${{secrets.GITHUB_TOKEN}}, GitHub will take care of it
+  MY_REPO: https://github.com/henrique-kenji/front.git
+  # replace "long-lived_branch_name" with your branch name
+  MY_BRANCH: main
+
+  # replace it with the path to master repo
+  MASTER_REPO: https://github.com/username/master_repo.git
+
+  # replace "master" with your master branch name
+  MASTER_BRANCH: master
+
 jobs:
   build:
     runs-on: windows-latest
@@ -26,6 +40,14 @@ jobs:
       - name: Test with pytest
         run: 
             python -m testes.test
+      - name: Merge with master
+        run: |
+          git clone ${{env.MY_REPO}} -b ${{env.MY_BRANCH}} tmp
+          cd tmp
+          git config user.name "Automerge Bot"
+          git config user.email "bot@example.com"
+          
+          git push
               
           
     
