@@ -42,12 +42,8 @@ jobs:
             python -m testes.test
       - name: Merge with master
         run: |
-          git clone ${{env.MY_REPO}} -b ${{env.MY_BRANCH}} tmp
-          cd tmp
-          git config user.name "Automerge Bot"
-          git config user.email "bot@example.com"
+          git clone https://github.com/henrique-kenji/front.git
           
-          git push
               
           
     
