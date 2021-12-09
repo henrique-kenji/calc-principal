@@ -1,12 +1,4 @@
-# This workflow will upload a Python Package using Twine when a release is created
-# For more information see: https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#publishing-to-package-registries
-
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: Upload Python Package
+name: Integração contínua
 
 on: [push]
 
@@ -33,16 +25,16 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.6
-      - name: Install dependencies
+      - name: Instalação de dependências
         run: |
           python3 -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Merge with master
+      - name: Merge para realização dos testes unitários
         run: |
           git clone https://github.com/henrique-kenji/servicos.git
           
       
-      - name: Test with pytest
+      - name: Testes unitários com unittest
         run: 
             python -m testes.test
               
